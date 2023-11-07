@@ -1,0 +1,13 @@
+.supbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: purple;
+    height: 8rem;
+    width: 100%;
+}
+.title{
+    height: 7rem;
+    width: auto;
+}
