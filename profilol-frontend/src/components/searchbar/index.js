@@ -12,7 +12,7 @@ export default function Searchbar() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const token = "RGAPI-3af3fad4-60c4-4d2e-be45-a1f0888a88f6";
+    const token = "";
     const convertName = encodeURIComponent(username); 
     const lista = [];
 
