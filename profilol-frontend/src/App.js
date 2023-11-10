@@ -4,13 +4,16 @@ import axios from 'axios';
 import Header from './components/header';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Searchbar from './components/searchbar';
+import InfoMain from './components/infomain';
 
 function App() {
   return (
-    <Router>
+
+    <div>
       <Header></Header>
+      <InfoMain></InfoMain>
       <Searchbar></Searchbar>
-    </Router>
+    </div>
     
   );
 }
