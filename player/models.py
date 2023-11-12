@@ -9,3 +9,6 @@ class Player(models.Model):
     times_searched = models.IntegerField(default=0)
     rank = models.CharField(max_length=50, default="Unranked")
     tier = models.CharField(max_length=50, default="Unranked")
+
+    def __str__(self):
+        return self.username
