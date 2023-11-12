@@ -5,13 +5,13 @@ import Header from './components/header';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Searchbar from './components/searchbar';
 import InfoMain from './components/infomain';
+import MatchBar from './components/matchbar';
 
 function App() {
   return (
 
     <div>
       <Header></Header>
-      <InfoMain></InfoMain>
       <Searchbar></Searchbar>
     </div>
     

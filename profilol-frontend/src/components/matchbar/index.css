@@ -1,0 +1,30 @@
+.jogadores{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color:aquamarine;
+}
+.mainPlayer{
+    flex-direction:row;
+
+}
+.timeA{
+    flex-direction:row;
+    justify-content: flex-end;
+    align-items: center;
+    
+}
+.timeB{
+    flex-direction:row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.iconPlayer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.jogadores{
+    display: flex;
+    width: 100%;
+}

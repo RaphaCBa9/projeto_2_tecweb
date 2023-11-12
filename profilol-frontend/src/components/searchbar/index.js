@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './index.css';
+import MatchBar from '../matchbar';
+import { useEffect } from 'react';
 
 export default function Searchbar() {
   const [username, setUsername] = useState('');
   const [infos, setInfos] = useState([]);
+  const [condicional, setCondicional] = useState(false);
 
   const handleInputChange = (event) => {
     setUsername(event.target.value);
@@ -15,7 +18,6 @@ export default function Searchbar() {
     const token = "";
     const convertName = encodeURIComponent(username); 
     const lista = [];
-
 
     axios
     .get(`https://br1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${convertName}?api_key=${token}`)
@@ -31,6 +33,7 @@ export default function Searchbar() {
                 const playerInfo = {}
                 playerInfo['player'] = participantes[j].summonerName;
                 playerInfo['champion'] = participantes[j].championName;
+                playerInfo['pesquisa'] = false;
                 if (participantes[j].summonerName == response.data.name){
                   playerInfo['win'] = participantes[j].win;
                   playerInfo['kills'] = participantes[j].kills;
@@ -39,11 +42,11 @@ export default function Searchbar() {
                   playerInfo['level'] = participantes[j].champLevel;
                   playerInfo['spells'] = [participantes[j].summoner1Id, participantes[j].summoner2Id];
                   playerInfo['items'] = [participantes[j].item0, participantes[j].item1, participantes[j].item2, participantes[j].item3, participantes[j].item4, participantes[j].item5, participantes[j].item6];
+                  playerInfo['pesquisa'] = true;
                 }
                 lista.push(playerInfo);
 
               }
-              console.log(lista);
 
 
 
@@ -54,7 +57,9 @@ export default function Searchbar() {
 
         }
         setInfos(lista);
-        console.log(infos);
+
+        setCondicional(true);
+
       
         })
         .catch(error => {
@@ -66,10 +71,18 @@ export default function Searchbar() {
     });    
 
 
-
  
+  };      
+  useEffect(() => {
+    console.log(infos);
+  }, [infos]);
+  if (condicional){
+    return (
+      <div>
+        <MatchBar match={infos}></MatchBar>
+      </div>
+    )
   }
-
 
   return (
     <div className="center">
