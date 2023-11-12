@@ -1,0 +1,61 @@
+.jogadores{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    background-color:aquamarine;
+    margin-top: 1.5rem;
+}
+.mainPlayer{
+    flex-direction:row;
+
+}
+.timeA{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 0;
+    width: 50%;
+}
+.timeB{
+    display: flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 0;
+    width: 50%;
+}
+.iconPlayer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+.playerIcon{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
+.jogadores{
+    display: flex;
+    width: 24%;
+}
+.champPic{
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 0.5rem;
+}
+.principal{
+    display: flex;
+    width: 76%;
+    height: 100%;
+
+}
+.card{
+    display: flex;
+    background-color: aqua;
+    }
