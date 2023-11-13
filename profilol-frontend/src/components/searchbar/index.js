@@ -109,6 +109,7 @@ export default function Searchbar() {
 
   };
   useEffect(() => {
+    getTop3();
     console.log(infos);
   }, [infos]);
   if (condicional) {
