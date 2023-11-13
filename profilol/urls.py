@@ -21,4 +21,5 @@ from player import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/player/add/", views.api_player),
+    path("api/player/getall/", views.api_player),
 ]

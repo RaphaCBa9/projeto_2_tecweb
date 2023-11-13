@@ -26,15 +26,14 @@ def api_player(request):
             player = Player.objects.get(username=new_player_data["username"])
             player.times_searched += 1
             player.save()
-    else:
+    elif request.method == "GET":
         try:
-            player = Player.objects.get(username=request.data["username"])
+            players = Player.objects.order_by("-times_searched")[:3]
         except Player.DoesNotExist:
             raise Http404()
 
-        player.save()
-    serialized_player = PlayerSerializer(player)
-    return Response(serialized_player.data)
+    serialized_players = PlayerSerializer(players, many=True)
+    return Response(serialized_players.data)
 
 
 # @api_view(["POST"])

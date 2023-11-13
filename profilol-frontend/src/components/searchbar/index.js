@@ -4,10 +4,29 @@ import './index.css';
 import MatchBar from '../matchbar';
 import { useEffect } from 'react';
 
+
+
 export default function Searchbar() {
+
+  const [top3, setTop3] = useState([]);
+  function getTop3() {
+    axios.get('http://127.0.0.1:8000/api/player/getall/')
+      .then(response => {
+        // salva os usernames dos jogadores em uma lista
+        const top3 = [];
+        for (var i = 0; i < response.data.length; i++) {
+          top3.push(response.data[i].username);
+        }
+        setTop3(top3);
+      }
+      )
+  }
+
+
   const [username, setUsername] = useState('');
   const [infos, setInfos] = useState([]);
   const [condicional, setCondicional] = useState(false);
+
 
   const handleInputChange = (event) => {
     setUsername(event.target.value);
@@ -65,6 +84,7 @@ export default function Searchbar() {
 
 
 
+
                 })
                 .catch(error => {
                   console.error('Error fetching data: ', error);
@@ -114,6 +134,17 @@ export default function Searchbar() {
           <button className="button-search" type="submit">Buscar</button>
         </form>
       </div>
+      <ul>
+        <li>
+          {top3[0]}
+        </li>
+        <li>
+          {top3[1]}
+        </li>
+        <li>
+          {top3[2]}
+        </li>
+      </ul>
     </div>
   );
 }
