@@ -111,4 +111,14 @@
     height: 4rem;
     margin: .2rem;
 }
-
+.xp{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 1.4rem;
+    width: 1.4rem;
+    opacity: 75%;
+    background-color: lightgray;
+    border-radius: 50%;
+}

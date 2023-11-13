@@ -12,7 +12,7 @@ export default function Matchbar({ match }) {
       matchLists.push(matchList);
       const winningPlayer = matchList.find(player => player.win === true);
       winLoss.push(!!winningPlayer);
-      if (match[i].pesquisa == true){
+      if (match[i].pesquisa === true){
         playerList.push(match[i]);
       }
     }
@@ -32,6 +32,7 @@ export default function Matchbar({ match }) {
                 <div className="total">
                   <div className="parte1">
                   <img src={`http://ddragon.leagueoflegends.com/cdn/13.20.1/img/champion/${player1.champion}.png`} className="champPic1"></img>
+                  <div className="xp">{player1.level}</div>
                   {/* <div className="spells">
                       <img src= {`http://ddragon.leagueoflegends.com/cdn/11.18.1/img/spell/${player1.spells[0]}.png`}></img>
                       <img src= {`http://ddragon.leagueoflegends.com/cdn/11.18.1/img/spell/${player1.spells[1]}.png`}></img>
@@ -89,6 +90,7 @@ export default function Matchbar({ match }) {
                   <div className="total">
                     <div className="parte1">
                     <img src={`http://ddragon.leagueoflegends.com/cdn/13.20.1/img/champion/${player1.champion}.png`} className="champPic1"></img>
+                    <div className="xp">{player1.level}</div>
                     {/* <div className="spells">
                         <img src= {`http://ddragon.leagueoflegends.com/cdn/11.18.1/img/spell/${player1.spells[0]}.png`}></img>
                         <img src= {`http://ddragon.leagueoflegends.com/cdn/11.18.1/img/spell/${player1.spells[1]}.png`}></img>
