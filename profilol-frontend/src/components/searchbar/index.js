@@ -21,7 +21,10 @@ export default function Searchbar() {
       }
       )
   }
-
+  function handleTop3Click(playerName) {
+    setUsername(playerName);
+    handleSubmit();
+  }
 
   const [username, setUsername] = useState('');
   const [infos, setInfos] = useState([]);
@@ -33,7 +36,7 @@ export default function Searchbar() {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+    if (event) event.preventDefault();
     const token = "RGAPI-e9bdbeb5-14a0-49da-8e8d-bc37f1919a1a";
     const convertName = encodeURIComponent(username);
     const lista = [];
@@ -137,13 +140,13 @@ export default function Searchbar() {
       </div>
       <ul> Top 3 mais pesquisados:
         <li>
-          {top3[0]}
+          <button onClick={() => handleTop3Click(top3[0])}>{top3[0]}</button>
         </li>
         <li>
-          {top3[1]}
+          <button onClick={() => handleTop3Click(top3[1])}>{top3[1]}</button>
         </li>
         <li>
-          {top3[2]}
+          <button onClick={() => handleTop3Click(top3[2])}>{top3[2]}</button>
         </li>
       </ul>
     </div>
