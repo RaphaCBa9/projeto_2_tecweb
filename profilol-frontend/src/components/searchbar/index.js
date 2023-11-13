@@ -135,7 +135,7 @@ export default function Searchbar() {
           <button className="button-search" type="submit">Buscar</button>
         </form>
       </div>
-      <ul>
+      <ul> Top 3 mais pesquisados:
         <li>
           {top3[0]}
         </li>
