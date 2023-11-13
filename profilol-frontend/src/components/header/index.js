@@ -3,8 +3,9 @@ import './index.css';
 export default function Header() {
   return (
     <div>
-    <div className="supbar">
+      <a className="supbar" href="http://localhost:3000">
         <img src='img/logo.png' className="title"></img>
+      </a>
     </div>
-    </div>
-  )};
+  )
+};
