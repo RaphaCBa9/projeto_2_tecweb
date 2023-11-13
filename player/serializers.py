@@ -10,6 +10,4 @@ class PlayerSerializer(serializers.ModelSerializer):
             "summonerLevel",
             "profileIconId",
             "times_searched",
-            "rank",
-            "tier",
         ]

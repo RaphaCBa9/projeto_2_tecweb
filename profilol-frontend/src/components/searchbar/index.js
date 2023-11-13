@@ -22,6 +22,21 @@ export default function Searchbar() {
     axios
       .get(`https://br1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${convertName}?api_key=${token}`)
       .then((response) => {
+        const username = response.data.name;
+        const playerIcon = response.data.profileIconId;
+        const summonerLevel = response.data.summonerLevel;
+        const data = {
+          username: username,
+          playerIconID: playerIcon,
+          summonerLevel: summonerLevel
+        };
+        axios.post('http://127.0.0.1:8000/api/player/add/', { data: data })
+          .then(response => {
+            console.log(response);
+          })
+          .catch(error => {
+            console.error('Error fetching data: ', error);
+          });
         setUsername(''); // clear the input field
         axios.get(`https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/${response.data.puuid}/ids?api_key=${token}`)
           .then(async (response2) => {
