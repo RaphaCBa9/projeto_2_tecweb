@@ -37,7 +37,7 @@ export default function Searchbar() {
 
   const handleSubmit = (event) => {
     if (event) event.preventDefault();
-    const token = "RGAPI-e9bdbeb5-14a0-49da-8e8d-bc37f1919a1a";
+    const token = "RGAPI-1ac4f942-39e7-434f-9281-0b3097613ed7";
     const convertName = encodeURIComponent(username);
     const lista = [];
 
